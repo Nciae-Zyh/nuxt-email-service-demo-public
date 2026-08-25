@@ -1,0 +1,33 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "replace-with-your-worker-name",
+  "main": ".output/server/index.mjs",
+  "preview_urls": false,
+  "compatibility_date": "2026-07-14",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": ".output/public",
+    "binding": "ASSETS"
+  },
+  "observability": {
+    "enabled": true
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "replace-with-your-d1-database",
+      "database_id": "00000000-0000-0000-0000-000000000000",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "send_email": [
+    {
+      "name": "EMAIL",
+      "allowed_sender_addresses": ["noreply@yourdomain.com"]
+    }
+  ],
+  "vars": {
+    "EMAIL_FROM": "noreply@yourdomain.com",
+    "SESSION_TTL_SECONDS": "28800"
+  }
+}
